@@ -64,36 +64,44 @@ export default function FloatingNav({
       <div className="men">
         <a
           onClick={() => scrollTo(".sec1", "home")}
-          className={`item ${activeSection === "home" ? "active" : ""}`}
+          className={`nav-link ${activeSection === "home" ? "active" : ""}`}
           style={{ cursor: "pointer" }}
         >
-          <img
-            src={activeSection === "home" ? "/img/acca.svg" : "/img/acc.svg"}
-            alt="home"
-          />
-          <h5>Home</h5>
+          <span className="nav-icon-wrap">
+            <img
+              src={activeSection === "home" ? "/img/acca.svg" : "/img/acc.svg"}
+              alt="home"
+            />
+          </span>
+          <span className="nav-label">Home</span>
         </a>
+
         <a
           onClick={() => scrollTo("#realisation", "projects")}
-          className={`item ${activeSection === "projects" ? "active" : ""}`}
+          className={`nav-link ${activeSection === "projects" ? "active" : ""}`}
           style={{ cursor: "pointer" }}
         >
-          <img
-            src={activeSection === "projects" ? "/img/reaa.svg" : "/img/rea.svg"}
-            alt="projects"
-          />
-          <h5>Projects</h5>
+          <span className="nav-icon-wrap">
+            <img
+              src={activeSection === "projects" ? "/img/reaa.svg" : "/img/rea.svg"}
+              alt="projects"
+            />
+          </span>
+          <span className="nav-label">Projects</span>
         </a>
+
         <a
           onClick={() => scrollTo(".sec6", "bio")}
-          className={`item ${activeSection === "bio" ? "active" : ""}`}
+          className={`nav-link ${activeSection === "bio" ? "active" : ""}`}
           style={{ cursor: "pointer" }}
         >
-          <img
-            src={activeSection === "bio" ? "/img/bioa.svg" : "/img/bio.svg"}
-            alt="biography"
-          />
-          <h5>About Me</h5>
+          <span className="nav-icon-wrap">
+            <img
+              src={activeSection === "bio" ? "/img/bioa.svg" : "/img/bio.svg"}
+              alt="biography"
+            />
+          </span>
+          <span className="nav-label">About Me</span>
         </a>
       </div>
 
