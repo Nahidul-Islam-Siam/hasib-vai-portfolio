@@ -17,8 +17,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+function getMetadataBase(): URL {
+  try {
+    return new URL(siteConfig.url);
+  } catch {
+    return new URL("https://hasib-portfolio.vercel.app");
+  }
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: getMetadataBase(),
   title: {
     default: siteConfig.title,
     // Child pages set `title: "About"` and get "About | YourBrand".

@@ -33,7 +33,11 @@ export default function StorySection({ onStartNow }: StorySectionProps) {
             I&apos;ll <span>develop</span> your <span>website</span> and put it
             online!
           </h3>
-          <img src="/img/profile.png" alt="Brice" />
+          <img
+            src="/img/profile.png"
+            alt="Profile"
+            className="rounded-full object-cover shadow-md aspect-square"
+          />
         </div>
 
         <div className="period m3">
@@ -44,9 +48,8 @@ export default function StorySection({ onStartNow }: StorySectionProps) {
 
       <div className="button">
         <a
-          className="btnsec2"
+          className="btnsec2 flex items-center gap-2 cursor-pointer transition-transform duration-200 hover:scale-105"
           onClick={onStartNow}
-          style={{ cursor: "pointer" }}
         >
           <p>Now!</p>
           <img src="/img/ardown.svg" alt="down arrow" />

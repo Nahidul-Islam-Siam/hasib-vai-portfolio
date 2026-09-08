@@ -92,17 +92,17 @@ export default function ContactDrawer({
 
       {/* Contact Drawer */}
       <div className={`contact ${isOpen ? "cactive" : ""}`}>
-        <div className="retour" onClick={onClose}>
+        <div className="retour flex items-center cursor-pointer transition-transform duration-200 hover:-translate-x-1" onClick={onClose}>
           <img src="/img/back.svg" alt="return" />
           <p>Return</p>
         </div>
 
         <div className="num">
           <h2>Contact</h2>
-          <a href="mailto:contact@briceclain.com">
+          <a href="mailto:contact@briceclain.com" className="transition-colors duration-200 hover:text-blue-600">
             <h3>contact@briceclain.com</h3>
           </a>
-          <a href="tel:+8801794667329">
+          <a href="tel:+8801794667329" className="transition-colors duration-200 hover:text-blue-600">
             <h3>+880 1794-667329</h3>
           </a>
         </div>
@@ -153,7 +153,11 @@ export default function ContactDrawer({
           {succMsg && <p id="succ">{succMsg}</p>}
 
           <div className="input_group">
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="cursor-pointer transition-all duration-300 hover:opacity-90 active:scale-95 disabled:opacity-50"
+            >
               {isSubmitting ? "Sending..." : "Send"}
             </button>
           </div>
