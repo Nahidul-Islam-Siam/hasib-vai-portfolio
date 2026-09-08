@@ -370,8 +370,8 @@ html, body {
 /* menu et bouton  */
 .menu {
   width: calc((100vw/12)*2.5);
-  min-width: 220px;
-  max-width: 320px;
+  min-width: 250px;
+  max-width: 380px;
   opacity: 0;
   top: 0;
   position: fixed;
@@ -386,17 +386,35 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 20px 24px 20px;
+  padding: 28px 16px 20px 16px;
+  box-sizing: border-box;
 }
 
 #imgprofil {
-  margin: 12px auto 28px auto;
-  width: 170px;
-  height: 170px;
+  margin: 10px auto 26px auto;
+  width: clamp(210px, calc((100vw / 12) * 1.6), 255px);
+  height: clamp(210px, calc((100vw / 12) * 1.6), 255px);
+  max-width: 255px;
+  max-height: 255px;
   border-radius: 50%;
   object-fit: cover;
   border: 4.5px solid #020073;
   box-shadow: 0 8px 28px rgba(2, 0, 115, 0.15);
+  flex-shrink: 0;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+#imgprofil:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 32px rgba(2, 0, 115, 0.22);
+}
+
+@media screen and (max-height: 700px) and (min-width: 1026px) {
+  #imgprofil {
+    width: 180px;
+    height: 180px;
+    margin: 6px auto 16px auto;
+  }
 }
 
 .men {
