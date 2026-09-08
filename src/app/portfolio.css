@@ -769,8 +769,11 @@ html, body {
 }
 
 .texts1 h2 img {
-  height: 1.2rem;
-  margin-left: -5px;
+  display: inline-block !important;
+  vertical-align: baseline !important;
+  height: 0.75em !important;
+  width: auto !important;
+  margin: 0 6px !important;
 }
 
 .texts1 p {

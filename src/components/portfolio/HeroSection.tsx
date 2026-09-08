@@ -86,13 +86,6 @@ export default function HeroSection({
         <div className="item8" />
       </div>
 
-      <img
-        id="imgprofil"
-        src="/img/profile.png"
-        alt="Profile"
-        className="rounded-2xl shadow-xl object-cover transition-transform duration-300 hover:scale-105"
-      />
-
       <div className={`s1 ${isLoaded ? "s1content" : ""}`}>
         <div className="orange" />
         <div className="texts1 anim-typewriter">
@@ -100,7 +93,7 @@ export default function HeroSection({
             <p>01</p>
             <div className="textcontain">
               <h2>
-                Hello, I&apos;m <span>Brice</span>!
+                Hello, I&apos;m <span>Hasib</span>!
               </h2>
               <div className="hide" />
             </div>
@@ -108,11 +101,19 @@ export default function HeroSection({
           <div className="line line2">
             <p>02</p>
             <div className="textcontain">
-              <h2>
+              <h2 className="!whitespace-nowrap">
                 I <span>design</span>{" "}
-                <img src="/img/design.svg" alt="design" /> and{" "}
-                <span>develop</span>{" "}
-                <img src="/img/laptop.svg" alt="laptop" />
+                <img
+                  src="/img/design.svg"
+                  alt="design"
+                  className="!inline-block !align-baseline h-[0.75em] w-auto mx-1.5 translate-y-[2px]"
+                />{" "}
+                and <span>develop</span>{" "}
+                <img
+                  src="/img/laptop.svg"
+                  alt="laptop"
+                  className="!inline-block !align-baseline h-[0.75em] w-auto mx-1.5 translate-y-[2px]"
+                />
               </h2>
               <div className="hide" />
             </div>

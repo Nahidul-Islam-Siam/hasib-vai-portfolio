@@ -15,7 +15,7 @@ export default function AboutSection({
     <section className="sec6">
       <div>
         <div className="txt">
-          <h1>BRICE CLAIN</h1>
+          <h1>HASIB</h1>
           <h3>Trois-Rivières (Quebec)</h3>
           <h5>
             I design and develop websites that are both elegant, intuitive, and
