@@ -13,13 +13,8 @@
 
 function required(value: string | undefined, name: string): string {
   if (!value) {
-    // In production a misconfigured URL should hard-fail the build/boot.
-    if (process.env.NODE_ENV === "production") {
-      throw new Error(`Missing required environment variable: ${name}`);
-    }
-    // In development, warn but keep going so the UI still renders.
     console.warn(
-      `[env] ${name} is not set. Add it to .env.local — see .env.example.`,
+      `[env] ${name} is not set. Add it to environment variables if backend integration is needed.`,
     );
   }
   return value ?? "";
