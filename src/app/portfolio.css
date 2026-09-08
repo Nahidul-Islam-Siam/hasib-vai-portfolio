@@ -473,31 +473,6 @@ html, body {
   display: none;
 }
 
-.lang {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: #9ca3af;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-.lang a {
-  color: #9ca3af;
-  padding: 3px 8px;
-  border-radius: 6px;
-  transition: all 150ms ease;
-  text-decoration: none;
-}
-
-.lang a.active,
-.lang a:hover {
-  color: var(--lien);
-  background-color: #f1f5f9;
-}
 
 .reseaux {
   display: flex;

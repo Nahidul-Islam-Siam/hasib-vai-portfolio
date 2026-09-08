@@ -97,15 +97,6 @@ export default function FloatingNav({
         </a>
       </div>
 
-      <div className="lang">
-        <a href="#" className="active">
-          <p>EN</p>
-        </a>
-        <p>/</p>
-        <a href="#">
-          <p>FR</p>
-        </a>
-      </div>
 
       <div className="reseaux">
         <a
