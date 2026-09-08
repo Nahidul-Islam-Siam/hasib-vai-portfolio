@@ -20,9 +20,9 @@ export default function TestimonialsSection() {
             <p>CEO, Bykaomes</p>
           </div>
           <p className="client-review">
-            &quot;I gave Brice free rein to create my entire platform. Very
+            &quot;I gave Hasib free rein to create my entire platform. Very
             professional and above all very responsive. I am really more than
-            satisfied with the result. I highly recommend Brice! I look forward
+            satisfied with the result. I highly recommend Hasib! I look forward
             to continuing the evolution of the platform with your feedback and
             relevant advice.&quot;
           </p>
@@ -34,8 +34,8 @@ export default function TestimonialsSection() {
             <p>Partner, Noje be</p>
           </div>
           <p className="client-review">
-            &quot;Very nice professional encounter with Brice. Even separated by
-            a few kilometers because we are in Belgium, Brice has always been
+            &quot;Very nice professional encounter with Hasib. Even separated by
+            a few kilometers because we are in Belgium, Hasib has always been
             very responsive and proactive. Always attentive to ideas, he
             perfectly creates a beautiful visual identity. I highly recommend
             his services for creating websites, business cards, flyers, etc. (We
@@ -49,8 +49,8 @@ export default function TestimonialsSection() {
             <p>CEO, Dealrun</p>
           </div>
           <p className="client-review">
-            &quot;Brice is a person who was attentive and delivered a result on
-            time, the result was top-notch, Brice&apos;s work brought a fresh
+            &quot;Hasib is a person who was attentive and delivered a result on
+            time, the result was top-notch, Hasib&apos;s work brought a fresh
             look to my website&apos;s design. I recommend.&quot;
           </p>
         </div>

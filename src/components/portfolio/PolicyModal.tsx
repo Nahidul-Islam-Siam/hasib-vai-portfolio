@@ -91,7 +91,7 @@ export default function PolicyModal({
             </p>
             <h3>1. Website Publisher</h3>
             <p>
-              <strong>Name:</strong> Brice
+              <strong>Name:</strong> Hasib
               <br />
               <strong>Address:</strong> 405-690 Rue de l&apos;Esplanade, G8Y2P9,
               Trois-Rivières, QC, Canada

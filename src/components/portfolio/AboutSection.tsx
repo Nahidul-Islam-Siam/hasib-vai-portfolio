@@ -68,32 +68,34 @@ export default function AboutSection({
               <img src="/img/tech/item6.svg" alt="tech item 6" />
               <img src="/img/tech/item7.svg" alt="tech item 7" />
               <img src="/img/tech/item8.svg" alt="tech item 8" />
-              <img src="/img/tech/item9.svg" alt="tech item 9" />
             </div>
           </div>
         </div>
       </div>
 
       <div className="bottom">
-        <div>
-          © Brice{" "}
+        <div className="footer-content">
+          <span>© {new Date().getFullYear()} Hasib</span>
+          <span className="footer-sep">|</span>
           <a
             onClick={(e) => {
               e.preventDefault();
               onOpenPrivacy();
             }}
             id="privacy-policy-link"
+            className="footer-link"
             style={{ cursor: "pointer" }}
           >
             Privacy Policy
-          </a>{" "}
-          |{" "}
+          </a>
+          <span className="footer-sep">|</span>
           <a
             onClick={(e) => {
               e.preventDefault();
               onOpenLegal();
             }}
             id="legal-notice-link"
+            className="footer-link"
             style={{ cursor: "pointer" }}
           >
             Legal Notice

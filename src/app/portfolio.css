@@ -2126,11 +2126,45 @@ section {
 
 
 .bottom {
-  bottom: 10px;
-  left: 50%;
-  transform: translate(0%, -50%);
-  text-align: center;
-  padding: 10px;
+  width: 100%;
+  margin-top: 64px;
+  padding: 28px 24px 36px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  box-sizing: border-box;
+}
+
+.bottom .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 0.95rem;
+  color: #555555;
+}
+
+.bottom .footer-sep {
+  color: #aaaaaa;
+  user-select: none;
+}
+
+.bottom a.footer-link {
+  margin: 0 !important;
+  color: #020073 !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+  font-size: 0.95rem !important;
+  display: inline-block;
+}
+
+.bottom a.footer-link:hover {
+  opacity: 0.7;
 }
 
 .sec4mobile {
@@ -2637,8 +2671,9 @@ section {
     top: 60%;
   }
 
-  .bottom{
-    padding: 0px;
+  .bottom {
+    margin-top: 36px;
+    padding: 20px 16px 28px 16px;
   }
 
   .s1content h4 {
