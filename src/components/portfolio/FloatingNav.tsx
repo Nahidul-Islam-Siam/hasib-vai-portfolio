@@ -64,7 +64,7 @@ export default function FloatingNav({
       <div className="men">
         <a
           onClick={() => scrollTo(".sec1", "home")}
-          className={`ac item ${activeSection === "home" ? "select active" : ""}`}
+          className={`item ${activeSection === "home" ? "active" : ""}`}
           style={{ cursor: "pointer" }}
         >
           <img
@@ -75,7 +75,7 @@ export default function FloatingNav({
         </a>
         <a
           onClick={() => scrollTo("#realisation", "projects")}
-          className={`rea item ${activeSection === "projects" ? "select active" : ""}`}
+          className={`item ${activeSection === "projects" ? "active" : ""}`}
           style={{ cursor: "pointer" }}
         >
           <img
@@ -86,7 +86,7 @@ export default function FloatingNav({
         </a>
         <a
           onClick={() => scrollTo(".sec6", "bio")}
-          className={`qu item ${activeSection === "bio" ? "select active" : ""}`}
+          className={`item ${activeSection === "bio" ? "active" : ""}`}
           style={{ cursor: "pointer" }}
         >
           <img
@@ -95,10 +95,6 @@ export default function FloatingNav({
           />
           <h5>About Me</h5>
         </a>
-        <a href="#lang" className="ang">
-          <h4>FR</h4>
-        </a>
-        <img className="drag" src="/img/drag.svg" alt="drag" />
       </div>
 
       <div className="lang">

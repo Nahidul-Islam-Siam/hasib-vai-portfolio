@@ -367,112 +367,179 @@ html, body {
 
 
 /* menu et bouton  */
+/* menu et bouton  */
 .menu {
   width: calc((100vw/12)*2.5);
+  min-width: 220px;
+  max-width: 320px;
   opacity: 0;
   top: 0;
   position: fixed;
-  border-radius: 0;
   height: 100%;
   background-color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
   z-index: 100;
   transition: 200ms ease-in-out;
   left: 0;
-  box-shadow: 5px 5px 40px 0px rgba(255, 0, 0, 0.101);
-  left: 1%;
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px 24px 20px;
 }
 
 #imgprofil {
-  margin-top: 10%;
-  width: calc((100vw/12)*1.5);
+  margin: 16px auto 20px auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f0f4ff;
+  box-shadow: 0 4px 20px rgba(2, 0, 115, 0.08);
 }
 
 .men {
-  margin: 20% auto;
-  width: 230px;
+  margin: 12px auto;
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .men a {
-  height: 30px;
-  padding: 15px;
+  height: auto;
+  padding: 11px 16px;
   display: flex;
   align-items: center;
-  color: black;
-  border-radius: 5px;
+  gap: 12px;
+  color: #4b5563;
+  border-radius: 10px;
   white-space: nowrap;
-  margin-right: 15px;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
 }
 
-
-.men h5 {
-  padding-right: 15px;
-}
-
-.men h4 {
-  color: rgb(92, 92, 92);
-}
-
-.men .active {
+.men a:hover {
+  background-color: #f8fafc;
   color: var(--lien);
-  transition: 50ms ease-in-out;
 }
 
-.click {
-  pointer-events: none;
-}
-
-.men .active h5 {
+.men a.active {
+  background-color: #f0f4ff;
   color: var(--lien);
-  background-color: var(--white);
-  transition: 50ms ease-in-out;
-  border-left: var(--lien) 2px solid;
-  border-radius: 5px;
-  padding: 10px 15px;
-  text-align: left;
+  font-weight: 600;
+  border: 1px solid rgba(2, 0, 115, 0.12);
+  box-shadow: 0 2px 8px -2px rgba(2, 0, 115, 0.06);
+}
+
+.men a h5 {
+  font-size: 0.95rem;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.men a.active h5 {
+  color: var(--lien);
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .men img {
-  margin-right: 10%;
-  height: 40px;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  flex-shrink: 0;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.men a.active img,
+.men a:hover img {
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 .men .drag {
   display: none;
 }
 
-.reseaux {
-  display: grid;
+.lang {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  grid-template-columns: 40% 40%;
-  padding-bottom: 5vh;
-  justify-items: stretch;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin-left: calc((100vw/12)*0.5);
-  ;
-  width: calc((100vw/12)*1.5);
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
-.reseaux img {
-  padding: 10px;
-  max-height: 5vh;
+.lang a {
+  color: #9ca3af;
+  padding: 3px 8px;
+  border-radius: 6px;
+  transition: all 150ms ease;
+  text-decoration: none;
+}
+
+.lang a.active,
+.lang a:hover {
+  color: var(--lien);
+  background-color: #f1f5f9;
+}
+
+.reseaux {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .reseaux a {
   display: flex;
   align-items: center;
-}
-
-.reseaux .rleft {
-  justify-content: flex-end;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 150ms ease;
 }
 
 .reseaux a:hover {
-  transform: scale(1.3);
-  transition: 50ms ease-in-out;
+  background-color: #eff6ff;
+  border-color: rgba(2, 0, 115, 0.25);
+  transform: translateY(-2px);
+}
+
+.reseaux img {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  opacity: 0.65;
+  transition: opacity 150ms ease;
+}
+
+.reseaux a:hover img {
+  opacity: 1;
 }
 
 #boutontr:hover {
