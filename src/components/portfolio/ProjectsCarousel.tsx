@@ -394,7 +394,7 @@ export default function ProjectsCarousel() {
             }}
             onMouseMove={handleMouseMovePrev}
           >
-            <img src="" width="40px" alt="" />
+            <img src="/img/back.svg" width="32px" alt="prev" />
           </div>
 
           <div

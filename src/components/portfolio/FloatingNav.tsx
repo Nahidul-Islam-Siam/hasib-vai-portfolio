@@ -57,6 +57,7 @@ export default function FloatingNav({
         alt="Portfolio Logo"
         width={150}
         height={150}
+        className="rounded-full object-cover shadow-sm transition-transform duration-300 hover:scale-105"
         priority
       />
 

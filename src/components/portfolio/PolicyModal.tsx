@@ -98,7 +98,7 @@ export default function PolicyModal({
               <br />
               <strong>Email:</strong> contact@briceclain.com
               <br />
-              <strong>Phone number:</strong> +1 819-609-8335
+              <strong>Phone number:</strong> +880 1794-667329
             </p>
             <h3>2. Hosting</h3>
             <p>

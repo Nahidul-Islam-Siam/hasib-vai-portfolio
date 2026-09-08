@@ -102,8 +102,8 @@ export default function ContactDrawer({
           <a href="mailto:contact@briceclain.com">
             <h3>contact@briceclain.com</h3>
           </a>
-          <a href="tel:001-819-609-8335">
-            <h3>(+1) 819 609 8335</h3>
+          <a href="tel:+8801794667329">
+            <h3>+880 1794-667329</h3>
           </a>
         </div>
 

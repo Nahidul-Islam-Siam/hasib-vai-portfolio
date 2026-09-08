@@ -86,7 +86,12 @@ export default function HeroSection({
         <div className="item8" />
       </div>
 
-      <img id="imgprofil" src="/img/profile.png" alt="Profile" />
+      <img
+        id="imgprofil"
+        src="/img/profile.png"
+        alt="Profile"
+        className="rounded-2xl shadow-xl object-cover transition-transform duration-300 hover:scale-105"
+      />
 
       <div className={`s1 ${isLoaded ? "s1content" : ""}`}>
         <div className="orange" />
@@ -146,9 +151,8 @@ export default function HeroSection({
       </div>
 
       <a
-        className="btnsec1"
+        className="btnsec1 flex items-center gap-2 cursor-pointer select-none transition-transform duration-200 hover:translate-y-1"
         onClick={onLearnMore}
-        style={{ cursor: "pointer" }}
       >
         <p>Learn more</p>
         <img src="/img/ardown.svg" alt="scroll down" />
