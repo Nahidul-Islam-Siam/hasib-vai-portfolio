@@ -54,9 +54,9 @@ export default function FloatingNav({
       <Image
         id="imgprofil"
         src="/img/profile.png"
-        alt="Portfolio Logo"
-        width={150}
-        height={150}
+        alt="Hasib"
+        width={220}
+        height={220}
         className="rounded-full object-cover shadow-sm transition-transform duration-300 hover:scale-105"
         priority
       />
