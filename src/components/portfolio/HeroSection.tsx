@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -17,53 +17,28 @@ export default function HeroSection({
   onLearnMore,
   isLoaded,
 }: HeroSectionProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [direction, setDirection] = useState(1);
   const backRef = useRef<HTMLDivElement>(null);
+  const [slideIdx, setSlideIdx] = React.useState(0);
+  const slides = ["/img/Champ1.png", "/img/Byka1.png", "/img/Noje 1.png"];
 
-  const slides = [
-    { src: "/img/Noje 1.png", alt: "Project Noje" },
-    { src: "/img/Champ1.png", alt: "Project Champ" },
-    { src: "/img/Byka1.png", alt: "Project Byka" },
-  ];
-
-  // Slide rotation every 3 seconds matching Brice Clain
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => {
-        const next = prev + direction;
-        if (next >= slides.length || next < 0) {
-          const newDir = -direction;
-          setDirection(newDir);
-          return prev + newDir * 1;
-        }
-        return next;
-      });
-    }, 3000);
+      setSlideIdx((prev) => (prev + 1) % slides.length);
+    }, 3200);
     return () => clearInterval(timer);
-  }, [direction, slides.length]);
+  }, [slides.length]);
 
-  // Mousemove parallax effect on background elements
+  // Mousemove parallax effect on background ambient glow
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const el1 = document.querySelector<HTMLElement>(".item1");
-      const el2 = document.querySelector<HTMLElement>(".item2");
-      const el3 = document.querySelector<HTMLElement>(".item3");
-      const el4 = document.querySelector<HTMLElement>(".item4");
-      const el5 = document.querySelector<HTMLElement>(".item5");
-      const el6 = document.querySelector<HTMLElement>(".item6");
-      const el7 = document.querySelector<HTMLElement>(".item7");
-      const el8 = document.querySelector<HTMLElement>(".item8");
+      const el1 = document.querySelector<HTMLElement>(".hero-glow-1");
+      const el2 = document.querySelector<HTMLElement>(".hero-glow-2");
 
-      const offsetX = e.clientX;
-      if (el1) el1.style.marginLeft = `${-offsetX / 60.5}px`;
-      if (el2) el2.style.marginTop = `${offsetX / 60.2}px`;
-      if (el3) el3.style.marginTop = `${offsetX / 60.7}px`;
-      if (el4) el4.style.marginTop = `${-offsetX / 64.3}px`;
-      if (el5) el5.style.marginLeft = `${-offsetX / 67.6}px`;
-      if (el6) el6.style.marginLeft = `${offsetX / 65.4}px`;
-      if (el7) el7.style.marginLeft = `${-offsetX / 60}px`;
-      if (el8) el8.style.marginLeft = `${offsetX / 60.7}px`;
+      const offsetX = (e.clientX - window.innerWidth / 2) / 35;
+      const offsetY = (e.clientY - window.innerHeight / 2) / 35;
+
+      if (el1) el1.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      if (el2) el2.style.transform = `translate(${-offsetX}px, ${-offsetY}px)`;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -86,9 +61,20 @@ export default function HeroSection({
         <div className="item8" />
       </div>
 
+      {/* Mobile profile avatar at the top */}
+      <img
+        src="/img/profile.png"
+        alt="Hasib"
+        className="hero-mobile-avatar"
+      />
+
+      {/* Ambient background visual glows */}
+      <div className="hero-glow-1 absolute -top-16 -right-16 w-96 h-96 rounded-full bg-[#8A35EC]/10 blur-3xl pointer-events-none" />
+      <div className="hero-glow-2 absolute -bottom-20 left-12 w-80 h-80 rounded-full bg-[#8A35EC]/5 blur-3xl pointer-events-none" />
+
       <div className={`s1 ${isLoaded ? "s1content" : ""}`}>
-        <div className="orange" />
-        <div className="texts1 anim-typewriter">
+        <div className="texts1 anim-typewriter relative">
+          <div className="orange" />
           <div className="line line1">
             <p>01</p>
             <div className="textcontain">
@@ -101,7 +87,7 @@ export default function HeroSection({
           <div className="line line2">
             <p>02</p>
             <div className="textcontain">
-              <h2 className="!whitespace-nowrap">
+              <h2 className="whitespace-normal md:!whitespace-nowrap">
                 I <span>design</span>{" "}
                 <img
                   src="/img/design.svg"
@@ -129,35 +115,31 @@ export default function HeroSection({
 
         <h4>I also design your brand image, logo...</h4>
 
+        {/* Mobile laptop mockup slider */}
         <div className="slider">
           <div className="slides">
-            {slides.map((slide, index) => {
-              let className = "slide";
-              if (index === currentSlide) {
-                className += " active";
-              } else if (
-                index ===
-                (currentSlide - direction + slides.length) % slides.length
-              ) {
-                className += " previous";
-              }
-              return (
-                <div key={slide.src} className={className}>
-                  <img src={slide.src} alt={slide.alt} />
-                </div>
-              );
-            })}
+            {slides.map((src, idx) => (
+              <div
+                key={src}
+                className={`slide ${idx === slideIdx ? "active" : ""}`}
+              >
+                <img src={src} alt={`Project preview ${idx + 1}`} />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      <a
-        className="btnsec1 flex items-center gap-2 cursor-pointer select-none transition-transform duration-200 hover:translate-y-1"
-        onClick={onLearnMore}
-      >
-        <p>Learn more</p>
-        <img src="/img/ardown.svg" alt="scroll down" />
-      </a>
+        {/* Learn more CTA button */}
+        <div className="btnsec1-wrap">
+          <a
+            className="btnsec1"
+            onClick={onLearnMore}
+          >
+            <p>Learn more</p>
+            <img src="/img/ardown.svg" alt="scroll down" />
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
