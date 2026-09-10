@@ -37,7 +37,7 @@ export default function PortfolioPage() {
     const timer = setTimeout(() => {
       setIsLoaded(true);
       document.documentElement.style.scrollBehavior = "smooth";
-    }, 800);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);

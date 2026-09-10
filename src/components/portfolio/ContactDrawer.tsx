@@ -69,19 +69,30 @@ export default function ContactDrawer({
 
   return (
     <>
-      {/* Floating Work With Me Button */}
+      {/* Modern Work With Me Button */}
       <a
         id="boutontr"
-        className={isScrolledToBottom ? "active" : ""}
+        className={`group ${isScrolledToBottom ? "active" : ""}`}
         onClick={onOpen}
         style={{ cursor: "pointer" }}
+        title="Work with me"
       >
-        <h4>
-          Work <br /> with me
-        </h4>
-        <div className="ar">
-          <img src="/img/aright.svg" alt="work with me" />
-        </div>
+        <span className="status-dot">
+          <span className="dot-ping" />
+          <span className="dot-solid" />
+        </span>
+        <span className="btn-text">Work with me</span>
+        <span className="btn-arrow">
+          <svg
+            className="w-3.5 h-3.5 text-white transition-transform duration-200 group-hover:translate-x-0.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </span>
       </a>
 
       {/* Backdrop */}
